@@ -1,0 +1,15 @@
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-kixkan
+mk_add_options MOZ_MAKE_FLAGS="-j4"
+ac_add_options --enable-application=browser
+ac_add_options --with-branding=browser/branding/kixkan
+ac_add_options --with-app-name=kixkan-browser
+ac_add_options --with-app-basename=KixKanBrowser
+ac_add_options --with-distribution-id=com.macandwindows.kixkan
+ac_add_options --with-redist
+ac_add_options --enable-release
+ac_add_options --enable-hardening
+ac_add_options --enable-sandbox
+ac_add_options --disable-debug
+ac_add_options --disable-tests
+ac_add_options --disable-updater
+

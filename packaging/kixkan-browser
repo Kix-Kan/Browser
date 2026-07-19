@@ -1,0 +1,14 @@
+#!/bin/sh
+set -eu
+export MOZ_LEGACY_PROFILES=1
+for engine in \
+  /app/lib/kixkan-browser/kixkan-browser \
+  /app/lib/kixkan-browser/firefox \
+  /usr/lib/kixkan-browser/kixkan-browser \
+  /usr/lib/kixkan-browser/firefox; do
+  if [ -x "${engine}" ]; then
+    exec "${engine}" "$@"
+  fi
+done
+echo "KixKan Browser engine is missing or damaged" >&2
+exit 127

@@ -1,0 +1,6 @@
+Unattended-Upgrade::Origins-Pattern {
+  "origin=KixKan,codename=${distro_codename},label=KixKan Browser";
+};
+Unattended-Upgrade::Package-Blacklist {
+};
+

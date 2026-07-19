@@ -1,0 +1,34 @@
+app-id: com.kixkan.Browser
+runtime: org.freedesktop.Platform
+runtime-version: '25.08'
+sdk: org.freedesktop.Sdk
+command: kixkan-browser
+finish-args:
+  - --share=ipc
+  - --share=network
+  - --socket=fallback-x11
+  - --socket=wayland
+  - --socket=pulseaudio
+  - --device=dri
+  - --filesystem=xdg-download
+  - --talk-name=org.freedesktop.Notifications
+  - --talk-name=org.freedesktop.portal.Desktop
+modules:
+  - name: kixkan-browser
+    buildsystem: simple
+    build-commands:
+      - mkdir -p /app/lib/kixkan-browser /app/bin /app/share/applications /app/share/icons/hicolor/128x128/apps
+      - tar -xf kixkan-browser-engine-0.1.0-amd64.tar.xz --strip-components=1 -C /app/lib/kixkan-browser
+      - install -Dm755 kixkan-browser /app/bin/kixkan-browser
+      - install -Dm644 kixkan-browser.desktop /app/share/applications/com.kixkan.Browser.desktop
+      - install -Dm644 kixkan-logo.png /app/share/icons/hicolor/128x128/apps/com.kixkan.Browser.png
+    sources:
+      - type: file
+        path: ../artifacts/kixkan-browser-engine-0.1.0-amd64.tar.xz
+      - type: file
+        path: ../packaging/kixkan-browser
+      - type: file
+        path: ../packaging/kixkan-browser.desktop
+      - type: file
+        path: ../branding/kixkan-logo.png
+

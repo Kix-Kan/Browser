@@ -1,0 +1,70 @@
+{
+  "policies": {
+    "AppAutoUpdate": false,
+    "BackgroundAppUpdate": false,
+    "DisableAppUpdate": true,
+    "DisableFeedbackCommands": true,
+    "DisableFirefoxAccounts": true,
+    "DisableFirefoxStudies": true,
+    "DisableFormHistory": false,
+    "DisablePocket": true,
+    "DisableProfileImport": false,
+    "DisableSetDesktopBackground": true,
+    "DisableSystemAddonUpdate": false,
+    "DisableTelemetry": true,
+    "DisplayBookmarksToolbar": "newtab",
+    "DontCheckDefaultBrowser": true,
+    "EncryptedMediaExtensions": true,
+    "ExtensionSettings": {
+      "*": {
+        "installation_mode": "allowed",
+        "allowed_types": ["extension", "theme"]
+      },
+      "kixkan-start@macandwindows.local": {
+        "installation_mode": "force_installed",
+        "install_url": "file:///usr/lib/kixkan-browser/extensions/kixkan-start.xpi"
+      }
+    },
+    "FirefoxHome": {
+      "Search": true,
+      "TopSites": false,
+      "SponsoredTopSites": false,
+      "Highlights": false,
+      "Pocket": false,
+      "SponsoredPocket": false,
+      "Snippets": false,
+      "Locked": false
+    },
+    "Homepage": {
+      "URL": "about:newtab",
+      "StartPage": "homepage",
+      "Locked": false
+    },
+    "OfferToSaveLogins": true,
+    "PasswordManagerEnabled": true,
+    "Permissions": {
+      "Notifications": {"BlockNewRequests": true, "Locked": false},
+      "Location": {"BlockNewRequests": false, "Locked": false},
+      "Camera": {"BlockNewRequests": false, "Locked": false},
+      "Microphone": {"BlockNewRequests": false, "Locked": false}
+    },
+    "Preferences": {
+      "browser.contentblocking.category": {"Value": "strict", "Status": "recommended"},
+      "browser.crashReports.unsubmittedCheck.autoSubmit2": {"Value": false, "Status": "locked"},
+      "browser.newtabpage.activity-stream.feeds.telemetry": {"Value": false, "Status": "locked"},
+      "browser.newtabpage.activity-stream.telemetry": {"Value": false, "Status": "locked"},
+      "browser.safebrowsing.downloads.remote.enabled": {"Value": false, "Status": "recommended"},
+      "datareporting.healthreport.uploadEnabled": {"Value": false, "Status": "locked"},
+      "dom.security.https_only_mode": {"Value": true, "Status": "recommended"},
+      "dom.security.https_only_mode_pbm": {"Value": true, "Status": "locked"},
+      "privacy.globalprivacycontrol.enabled": {"Value": true, "Status": "recommended"},
+      "privacy.trackingprotection.enabled": {"Value": true, "Status": "recommended"},
+      "toolkit.telemetry.enabled": {"Value": false, "Status": "locked"},
+      "toolkit.telemetry.unified": {"Value": false, "Status": "locked"}
+    },
+    "SearchEngines": {
+      "Default": "DuckDuckGo",
+      "PreventInstalls": false
+    }
+  }
+}

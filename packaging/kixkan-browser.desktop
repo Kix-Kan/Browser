@@ -1,0 +1,21 @@
+[Desktop Entry]
+Type=Application
+Name=KixKan Browser
+GenericName=Web Browser
+Comment=Browse the web with local-first KixKan defaults
+Exec=kixkan-browser %u
+Icon=kixkan-browser
+Terminal=false
+StartupNotify=true
+Categories=Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml+xml;application/xml;x-scheme-handler/http;x-scheme-handler/https;
+Actions=new-window;private-window;
+
+[Desktop Action new-window]
+Name=New Window
+Exec=kixkan-browser --new-window
+
+[Desktop Action private-window]
+Name=New Private Window
+Exec=kixkan-browser --private-window
+

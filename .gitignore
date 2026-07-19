@@ -1,0 +1,14 @@
+build/
+dist/
+artifacts/
+downloads/
+obj-kixkan/
+*.deb
+*.xpi
+*.tar.xz
+*.asc
+*.sha256
+__pycache__/
+*.py[cod]
+.pytest_cache/
+

@@ -1,0 +1,11 @@
+{
+  "default": "DuckDuckGo",
+  "providers": [
+    {
+      "name": "DuckDuckGo",
+      "search_url": "https://duckduckgo.com/?q={searchTerms}",
+      "suggest_url": "https://duckduckgo.com/ac/?q={searchTerms}&type=list"
+    }
+  ]
+}
+

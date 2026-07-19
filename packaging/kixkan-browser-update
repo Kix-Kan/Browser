@@ -1,0 +1,10 @@
+#!/bin/sh
+set -eu
+if [ "$(id -u)" -ne 0 ]; then
+  echo "KixKan Browser updates require root through the system service" >&2
+  exit 77
+fi
+export DEBIAN_FRONTEND=noninteractive
+/usr/bin/apt-get --quiet update
+/usr/bin/apt-get --quiet --assume-yes --only-upgrade install kixkan-browser
+

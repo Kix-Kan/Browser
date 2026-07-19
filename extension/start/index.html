@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="referrer" content="no-referrer">
+  <title>KixKan Start</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="aurora aurora-one" aria-hidden="true"></div>
+  <div class="aurora aurora-two" aria-hidden="true"></div>
+  <main>
+    <header class="masthead">
+      <div class="brand">
+        <img src="assets/kixkan-logo.png" alt="" width="56" height="56">
+        <div><strong>KixKan</strong><span>Browser</span></div>
+      </div>
+      <div class="local-time" aria-live="polite"><span id="time">--:--</span><small id="date">Local time</small></div>
+    </header>
+
+    <section class="hero" aria-labelledby="headline">
+      <p class="eyebrow">PRIVATE BY DEFAULT · READY TO EXPLORE</p>
+      <h1 id="headline">The web, with<br><em>less noise.</em></h1>
+      <p class="lede">Search without a KixKan account, hidden telemetry, or a personalized advertising profile.</p>
+      <form class="search" action="https://duckduckgo.com/" method="get">
+        <label class="sr-only" for="search-query">Search the web with DuckDuckGo</label>
+        <input id="search-query" name="q" type="search" autocomplete="off" spellcheck="false" placeholder="Search the web" autofocus>
+        <button type="submit">Search <span aria-hidden="true">→</span></button>
+      </form>
+    </section>
+
+    <section class="launchpad" aria-label="Bookmarks">
+      <a href="https://github.com/Kix-Kan/KixKan-OS"><span class="tile-icon">K</span><span><strong>KixKan OS</strong><small>Project and releases</small></span></a>
+      <a href="https://support.mozilla.org/"><span class="tile-icon">?</span><span><strong>Web help</strong><small>Browser fundamentals</small></span></a>
+      <a href="about:preferences#privacy"><span class="tile-icon">◈</span><span><strong>Privacy controls</strong><small>Review your choices</small></span></a>
+    </section>
+
+    <footer><span>No hidden KixKan telemetry</span><span>Developed by Mac and Windows</span></footer>
+  </main>
+  <script src="start.js"></script>
+</body>
+</html>
+

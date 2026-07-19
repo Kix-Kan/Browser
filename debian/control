@@ -1,0 +1,18 @@
+Source: kixkan-browser
+Section: web
+Priority: optional
+Maintainer: KixKan Project <175904030+SocialImpaired@users.noreply.github.com>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.7.0
+Rules-Requires-Root: no
+Homepage: https://github.com/Kix-Kan/KixKan-Browser
+Vcs-Git: https://github.com/Kix-Kan/KixKan-Browser.git
+
+Package: kixkan-browser
+Architecture: amd64
+Depends: ${misc:Depends}, ${shlibs:Depends}, libasound2t64, libdbus-glib-1-2, libgtk-3-0t64
+Recommends: ffmpeg, libavcodec-extra, xdg-utils
+Provides: www-browser, x-www-browser
+Description: privacy-focused KixKan web browser
+ KixKan Browser is an independently updated Firefox ESR-derived browser with
+ original KixKan branding, local-first defaults, and no hidden KixKan telemetry.

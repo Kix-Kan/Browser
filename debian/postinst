@@ -1,0 +1,9 @@
+#!/bin/sh
+set -e
+update-alternatives --install /usr/bin/x-www-browser x-www-browser /usr/bin/kixkan-browser 90
+update-alternatives --install /usr/bin/www-browser www-browser /usr/bin/kixkan-browser 90
+if command -v systemctl >/dev/null 2>&1; then
+  systemctl enable --now kixkan-browser-update.timer >/dev/null 2>&1 || true
+fi
+exit 0
+

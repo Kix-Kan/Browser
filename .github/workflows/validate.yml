@@ -1,0 +1,27 @@
+name: Validate browser overlay
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install validators
+        run: sudo apt-get update && sudo apt-get install -y shellcheck zip
+      - name: Validate source, policy, packaging, and start page
+        run: bash scripts/validate.sh
+      - name: Build deterministic start extension
+        run: bash scripts/build-extension.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kixkan-start-extension
+          path: |
+            artifacts/kixkan-start.xpi
+            artifacts/kixkan-start.xpi.sha256
+

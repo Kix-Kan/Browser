@@ -1,0 +1,5 @@
+kixkan-browser (0.1.0-1) unstable; urgency=medium
+
+  * Initial development packaging based on Firefox ESR 140.12.0.
+
+ -- KixKan Project <175904030+SocialImpaired@users.noreply.github.com>  Sat, 18 Jul 2026 20:00:00 -0400

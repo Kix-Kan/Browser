@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "KixKan Start",
+  "version": "0.1.0",
+  "description": "Local, network-silent start and new-tab page for KixKan Browser.",
+  "chrome_url_overrides": {
+    "newtab": "start/index.html"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "kixkan-start@macandwindows.local",
+      "strict_min_version": "140.0"
+    }
+  },
+  "permissions": [],
+  "host_permissions": [],
+  "content_security_policy": {
+    "extension_pages": "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; form-action https://duckduckgo.com; object-src 'none'; frame-src 'none'; base-uri 'none'"
+  }
+}
+

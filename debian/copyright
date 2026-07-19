@@ -1,0 +1,19 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: KixKan Browser
+Source: https://github.com/Kix-Kan/KixKan-Browser
+
+Files: *
+Copyright: 2026 Mac and Windows
+License: MPL-2.0
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+Files: browser/branding/kixkan/*
+Copyright: 2026 Mac and Windows
+License: MPL-2.0
+
+Files: build/firefox-source/*
+Copyright: Mozilla contributors
+License: MPL-2.0
+

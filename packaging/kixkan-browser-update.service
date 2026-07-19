@@ -1,0 +1,12 @@
+[Unit]
+Description=Install approved KixKan Browser security updates
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/kixkan-browser-update
+Nice=10
+IOSchedulingClass=best-effort
+PrivateTmp=true
+ProtectHome=true
