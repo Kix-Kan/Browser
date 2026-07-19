@@ -13,7 +13,7 @@ jobs:
   check-esr:
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - id: check
         name: Compare approved ESR pin with Mozilla
         shell: bash

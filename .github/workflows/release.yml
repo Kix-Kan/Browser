@@ -18,7 +18,7 @@ jobs:
     timeout-minutes: 240
     environment: browser-release
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Confirm requested version
         run: |
           source VERSION.env
