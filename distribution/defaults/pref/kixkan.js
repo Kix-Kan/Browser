@@ -1,6 +1,9 @@
 // KixKan defaults are local-first and user-changeable unless security-sensitive.
 pref("app.update.enabled", false); // Debian/APT owns browser updates.
 pref("browser.shell.checkDefaultBrowser", false);
+pref("browser.tabs.unloadOnLowMemory", true);
+pref("sidebar.revamp", true);
+pref("sidebar.verticalTabs", false); // Standard tabs remain default; vertical tabs are one switch away.
 pref("browser.startup.homepage_override.mstone", "ignore");
 pref("browser.newtabpage.activity-stream.feeds.telemetry", false);
 pref("browser.newtabpage.activity-stream.telemetry", false);
@@ -21,4 +24,3 @@ pref("toolkit.telemetry.server", "");
 pref("toolkit.telemetry.shutdownPingSender.enabled", false);
 pref("toolkit.telemetry.unified", false);
 pref("toolkit.telemetry.updatePing.enabled", false);
-

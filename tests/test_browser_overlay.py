@@ -55,6 +55,14 @@ class BrowserOverlayTests(unittest.TestCase):
         self.assertIs(preferences["toolkit.telemetry.enabled"]["Value"], False)
         self.assertIs(preferences["browser.crashReports.unsubmittedCheck.autoSubmit2"]["Value"], False)
 
+    def test_first_release_exposes_privacy_and_tab_choices(self) -> None:
+        start = (ROOT / "extension/start/index.html").read_text(encoding="utf-8")
+        defaults = (ROOT / "distribution/defaults/pref/kixkan.js").read_text(encoding="utf-8")
+        self.assertIn('href="about:protections"', start)
+        self.assertIn('pref("sidebar.revamp", true)', defaults)
+        self.assertIn('pref("sidebar.verticalTabs", false)', defaults)
+        self.assertIn('pref("browser.tabs.unloadOnLowMemory", true)', defaults)
+
     def test_extension_policy_does_not_silently_block_user_extensions(self) -> None:
         policies = json.loads((ROOT / "distribution/policies.json").read_text(encoding="utf-8"))["policies"]
         self.assertEqual(policies["ExtensionSettings"]["*"]["installation_mode"], "allowed")
@@ -73,4 +81,3 @@ class BrowserOverlayTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
