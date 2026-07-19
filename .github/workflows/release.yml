@@ -40,7 +40,7 @@ jobs:
         env:
           KIXKAN_DEB_SIGNING_KEY: ${{ secrets.DEB_SIGNING_KEY_ID }}
         run: bash scripts/sign-release.sh
-      - uses: actions/attest-build-provenance@v2
+      - uses: actions/attest-build-provenance@v4
         with:
           subject-path: artifacts/kixkan-browser_*.deb
       - name: Create draft GitHub release
