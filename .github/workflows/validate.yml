@@ -18,7 +18,7 @@ jobs:
         run: bash scripts/validate.sh
       - name: Build deterministic start extension
         run: bash scripts/build-extension.sh
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: kixkan-start-extension
           path: |
