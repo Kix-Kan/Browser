@@ -155,7 +155,7 @@ ASCII punycode form. Unsupported external data is rejected rather than searched.
 
 Open **Menu → Browsing data**. No category is preselected and opening/cancelling
 either screen does not dispatch a clear. Select categories, choose Review, read
-the exact all-time scope and confirm Clear selected data. There is no unsupported
+the exact all-time scope and confirm Clear data. There is no unsupported
 last-hour selector, background auto-clear or silent profile reset.
 
 - **Current tab & history:** closes the sole live session and discards its

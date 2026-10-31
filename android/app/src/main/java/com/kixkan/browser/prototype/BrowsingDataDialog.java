@@ -74,7 +74,7 @@ final class BrowsingDataDialog {
                                 + "\n\nThis cannot be undone. Bookmarks and your KixKan account are kept."
                                 + "\n\nOnly this browser is affected. This is not secure disk erasure.")
                         .setNegativeButton("Keep data", null)
-                        .setPositiveButton("Clear selected data", (dialog, which) -> {
+                        .setPositiveButton("Clear data", (dialog, which) -> {
                             dismiss();
                             confirmed.clear(selection);
                         }).create();
