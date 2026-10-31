@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/browser_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/kixkan_night"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/top_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp">
+
+        <Button
+            android:id="@+id/back"
+            style="@style/Widget.KixKanBrowser.ToolbarButton"
+            android:contentDescription="@string/back"
+            android:text="&#8249;" />
+
+        <EditText
+            android:id="@+id/address"
+            android:contentDescription="@string/address_hint"
+            android:layout_width="0dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/address_background"
+            android:gravity="center_vertical"
+            android:hint="@string/address_hint"
+            android:imeOptions="actionGo"
+            android:importantForAutofill="no"
+            android:inputType="textUri"
+            android:maxLines="1"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:selectAllOnFocus="true"
+            android:textColor="@color/kixkan_ink"
+            android:textColorHint="@color/kixkan_muted"
+            android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/forward"
+            style="@style/Widget.KixKanBrowser.ToolbarButton"
+            android:contentDescription="@string/forward"
+            android:text="&#8250;" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:indeterminateTint="@color/kixkan_cyan"
+        android:visibility="gone" />
+
+    <org.mozilla.geckoview.GeckoView
+        android:id="@+id/gecko_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:background="@color/kixkan_panel"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="3dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="3dp"
+        android:paddingBottom="4dp">
+
+        <Button
+            android:id="@+id/home"
+            style="@style/Widget.KixKanBrowser.BottomButton"
+            android:contentDescription="@string/home"
+            android:text="@string/bottom_home" />
+
+        <Button
+            android:id="@+id/save_bookmark"
+            style="@style/Widget.KixKanBrowser.BottomButton"
+            android:contentDescription="@string/save_bookmark"
+            android:text="@string/bottom_save" />
+
+        <ImageButton
+            android:id="@+id/account"
+            style="@style/Widget.KixKanBrowser.SettingsButton"
+            android:contentDescription="@string/account_settings"
+            android:src="@drawable/kixkan_symbol" />
+
+        <Button
+            android:id="@+id/bookmarks"
+            style="@style/Widget.KixKanBrowser.BottomButton"
+            android:contentDescription="@string/bookmarks"
+            android:text="@string/bottom_bookmarks" />
+
+        <Button
+            android:id="@+id/menu"
+            style="@style/Widget.KixKanBrowser.BottomButton"
+            android:contentDescription="@string/menu"
+            android:text="@string/bottom_menu" />
+    </LinearLayout>
+</LinearLayout>

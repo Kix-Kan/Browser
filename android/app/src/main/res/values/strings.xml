@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">KixKan Browser</string>
+    <string name="about_browser">About KixKan Browser</string>
+    <string name="set_default_browser">Set default browser</string>
+    <string name="browser_already_default">KixKan Browser is already your default browser.</string>
+    <string name="default_browser_unavailable">Android does not offer a default-browser choice on this device.</string>
+    <string name="default_browser_error">Android could not open the default-browser choice. Your current default was not changed by KixKan Browser.</string>
+    <string name="external_link_rejected">That link is not supported. Only ordinary HTTP and HTTPS web links can be opened.</string>
+    <string name="address_hint">Search or enter address</string>
+    <string name="back">Back</string>
+    <string name="forward">Forward</string>
+    <string name="reload">Reload</string>
+    <string name="go">Go</string>
+    <string name="home">Home</string>
+    <string name="save_bookmark">Save</string>
+    <string name="bookmarks">Bookmarks</string>
+    <string name="account">Account</string>
+    <string name="menu">Menu</string>
+    <string name="account_settings">KixKan account settings</string>
+    <string name="bottom_home">&#8962;</string>
+    <string name="bottom_save">+</string>
+    <string name="bottom_bookmarks">&#9733;</string>
+    <string name="bottom_menu">&#8942;</string>
+    <string name="account_settings_signed_in">KixKan account settings, signed in as %1$s</string>
+    <string name="kixkan_account">KixKan account</string>
+    <string name="account_explanation">Use the same KixKan account as kixkan.com. Bookmark sync is optional and is not end-to-end encrypted in this prototype.</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign in</string>
+    <string name="sign_out">Sign out</string>
+    <string name="manage_account_on_web">Create or manage account on kixkan.com</string>
+    <string name="account_verified_title">Account verified</string>
+    <string name="account_verified_message">Your KixKan account is verified and ready to use on the website and in KixKan Browser.</string>
+    <string name="continue_label">Continue</string>
+</resources>

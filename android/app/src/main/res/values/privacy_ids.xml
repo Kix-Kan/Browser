@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="privacy_history" type="id" />
+    <item name="privacy_cache" type="id" />
+    <item name="privacy_sites" type="id" />
+    <item name="privacy_review" type="id" />
+    <item name="privacy_confirm_clear" type="id" />
+    <item name="privacy_selection_status" type="id" />
+    <item name="privacy_operation_status" type="id" />
+</resources>

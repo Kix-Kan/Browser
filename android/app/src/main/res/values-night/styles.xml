@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.KixKanBrowser" parent="android:style/Theme.Material.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:colorAccent">@color/kixkan_cyan</item>
+        <item name="android:navigationBarColor">@color/kixkan_night</item>
+        <item name="android:statusBarColor">@color/kixkan_night</item>
+        <item name="android:windowBackground">@color/kixkan_night</item>
+    </style>
+</resources>

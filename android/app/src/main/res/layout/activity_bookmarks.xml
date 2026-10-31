@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bookmarks_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/kixkan_night"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/bookmark_sync_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="12dp"
+        android:textColor="@color/kixkan_muted"
+        android:textSize="14sp" />
+
+    <ListView
+        android:id="@+id/bookmark_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@color/kixkan_border"
+        android:dividerHeight="1dp" />
+</LinearLayout>

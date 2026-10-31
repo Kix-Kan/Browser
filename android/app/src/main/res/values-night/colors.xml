@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="kixkan_night">#0C1322</color>
+    <color name="kixkan_panel">#151F31</color>
+    <color name="kixkan_border">#34445F</color>
+    <color name="kixkan_ink">#EEF3FF</color>
+    <color name="kixkan_muted">#B0BDD4</color>
+    <color name="kixkan_cyan">#9FC2FF</color>
+    <color name="icon_background">#0C1322</color>
+</resources>

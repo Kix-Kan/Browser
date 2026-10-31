@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; form-action https://duckduckgo.com; base-uri 'none'">
+  <title>KixKan Browser</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <header><img src="kixkan-symbol.png" width="44" height="44" alt=""><span>KixKan Browser</span><span class="badge">Preview</span></header>
+    <section class="intro" aria-labelledby="welcome-title">
+      <p class="eyebrow">YOUR NEXT DISCOVERY</p>
+      <h1 id="welcome-title">Room to<br>explore.</h1>
+      <p class="subtitle">A quiet start. A world of possibilities.</p>
+    </section>
+    <form action="https://duckduckgo.com/" method="get" role="search">
+      <label for="search">Search the web</label>
+      <div class="search-row"><input id="search" name="q" type="search" placeholder="What are you curious about?" maxlength="2048" required autocomplete="off"><button type="submit">Search</button></div>
+      <p class="search-note">Searches open in DuckDuckGo.</p>
+    </form>
+    <section aria-labelledby="explore-title" class="links-section">
+      <h2 id="explore-title">A few places to begin</h2>
+      <div class="links"><a href="https://kixkan.com"><span class="site-icon">K</span><span>KixKan<span class="link-detail">Our home on the web</span></span><span aria-hidden="true">↗</span></a><a href="https://www.mozilla.org"><span class="site-icon">M</span><span>Mozilla<span class="link-detail">The people behind Gecko</span></span><span aria-hidden="true">↗</span></a></div>
+    </section>
+    <aside aria-labelledby="privacy-title"><span class="privacy-dot" aria-hidden="true"></span><div><h2 id="privacy-title">Your browsing, your choice.</h2><p>HTTPS-only navigation, Global Privacy Control and tracker protection are enabled. Browsing does not require a KixKan account.</p></div></aside>
+    <p class="preview-note">Developer prototype. Open the browser menu → Browsing data to review all-time clearing options. Downloads and multiple tabs are not implemented yet. Optional account and bookmark features are separate from this start page.</p>
+    <footer>Developed by Broadway Pixels<span>Powered by Mozilla GeckoView</span></footer>
+  </main>
+</body>
+</html>
