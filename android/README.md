@@ -203,3 +203,9 @@ Primary interfaces:
 [clear flags](https://mozilla.github.io/geckoview/javadoc/mozilla-central/org/mozilla/geckoview/StorageController.ClearFlags.html).
 Public documentation advances with Gecko; signatures, constants and bridge
 behavior were also inspected in the exact159.0.20261022150525 artifact.
+
+Executed results and limitations:
+[acceptance report](docs/reports/2026-10-31-privacy.json),
+[native passing log](docs/reports/native-privacy-2026-10-31.log),
+and [unedited emulator screenshots](docs/screenshots/privacy/).
+These are prototype source-review evidence, not a production APK release.

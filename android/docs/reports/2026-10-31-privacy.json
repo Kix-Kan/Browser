@@ -1,0 +1,218 @@
+{
+  "project": "KixKan Browser for Android",
+  "developer": "Broadway Pixels",
+  "report_date": "2026-10-31",
+  "milestone": "Selective all-time browsing-data controls",
+  "acceptance_status": "local_automated_native_and_visual_checks_passed",
+  "application": {
+    "id": "com.kixkan.browser.prototype",
+    "version": "0.3.0-prototype",
+    "version_code": 3,
+    "release_type": "development_debug_apk_not_production_release",
+    "runtime_permission_changes": false
+  },
+  "foundation": {
+    "engine": "Mozilla GeckoView",
+    "channel": "stable",
+    "pin": "159.0.20261022150525",
+    "stable_metadata_checked_on": "2026-10-31",
+    "metadata_last_updated": "20261027124525",
+    "metadata_url": "https://maven.mozilla.org/maven2/org/mozilla/geckoview/geckoview/maven-metadata.xml",
+    "artifact_pom_url": "https://maven.mozilla.org/maven2/org/mozilla/geckoview/geckoview/159.0.20261022150525/geckoview-159.0.20261022150525.pom",
+    "compile_sdk": "37.2",
+    "target_sdk": 37,
+    "minimum_sdk": 26,
+    "build_tools": "36.0.0",
+    "agp": "9.3.3",
+    "gradle": "9.5.0",
+    "jdk_major": 17,
+    "engine_built_from_source": false,
+    "metadata_checks_bypassed": false
+  },
+  "artifact": {
+    "path_relative_to_android": "app/build/outputs/apk/debug/app-debug.apk",
+    "bytes": 533519512,
+    "sha256": "5e1fa2658f0120bdaab326d5289ae7dd5ad936423976a2939a7072f9ac7ecf3e",
+    "signature": "APK Signature Scheme v2 verified; development signing only",
+    "production_signing": false,
+    "uploaded_as_release_artifact": false
+  },
+  "implemented": [
+    "Native browsing-data choices, review/confirmation and cancellation before submission",
+    "All-time current-tab/back-forward session-history reset",
+    "Selective network/image-cache request",
+    "Selective cookies/DOM-storage request",
+    "Explicit current-tab/history selection required before any storage request",
+    "Runtime-scoped asynchronous controller with overlap rejection and pending-result observation",
+    "Paused browsing and closed sessions while a UI clear request is pending",
+    "Fresh local Home session after a terminal outcome; no full SessionState restoration",
+    "Honest request-completed/not-confirmed status instead of guaranteed-erasure claims"
+  ],
+  "selection_and_storage_contract": {
+    "time_range": "ALL_TIME_ONLY",
+    "initial_selection": "none",
+    "validation": "A nonempty selection is required. Cache or site-storage choices additionally require the user to select Current tab & history. No unchecked category is silently selected.",
+    "history_scope": "Current tab and its back/forward GeckoSession history only; not an independently maintained global visit-history database",
+    "close_boundary": "Owned browser sessions close before any storage clear request, preventing loaded sites from immediately restoring data",
+    "history_only_storage_flags": 0,
+    "cache_flags": {
+      "names": [
+        "NETWORK_CACHE",
+        "IMAGE_CACHE"
+      ],
+      "combined_value": 6
+    },
+    "cookies_and_site_storage_flags": {
+      "names": [
+        "COOKIES",
+        "DOM_STORAGES"
+      ],
+      "combined_value": 17
+    },
+    "combined_storage_flags": 23,
+    "broad_ALL_or_SITE_DATA_flags_used": false,
+    "permissions_settings_auth_sessions_selected": false,
+    "filesystem_delete_operations_used": false,
+    "automatic_retries": false,
+    "supported_rollback_or_cancellation_after_start": false,
+    "engine_result_error_path": "Exposed errors complete exceptionally with typed, fixed-message failures; partial effects are disclosed rather than represented as atomic rollback",
+    "outcome_verification": "ENGINE_COMPLETION_ONLY",
+    "independently_verified_all_items_erased": false
+  },
+  "important_engine_limitation": {
+    "finding": "The pinned GeckoView159 storage bridge discards individual cleaner failure bits before reporting callback completion.",
+    "consequence": "The public API completion means Gecko finished processing the request, not independent proof that every matching item was removed. Exposed dispatch/runtime errors still propagate.",
+    "ui_language": "Clear request completed or Clear request not confirmed",
+    "secure_erase_claim": false,
+    "native_fixture_scope": "The tests below verify selected synthetic items and preservation boundaries, not exhaustive deletion of an arbitrary profile."
+  },
+  "preserved_and_excluded": {
+    "excluded_from_controls": [
+      "KixKan native bookmarks",
+      "Native KixKan account/session preferences and credentials",
+      "Saved passwords",
+      "Downloaded files",
+      "Unselected engine storage categories",
+      "Other applications and operating-system data"
+    ],
+    "actual_preservation_evidence": "Test-owned local bookmark and native-preference sentinels remained intact across the native fixtures.",
+    "production_account_login_or_api_tests": false,
+    "production_credentials_read_or_used_by_tests": false,
+    "claim_that_real_account_authentication_was_retested": false
+  },
+  "validation": {
+    "successful_build_runs_seconds": [
+      24,
+      11,
+      12,
+      17
+    ],
+    "build_results": "All three recorded runs succeeded",
+    "lint": "Passed; no check or baseline bypass introduced",
+    "unit": {
+      "tests": 35,
+      "failures": 0,
+      "includes": [
+        "5 existing address/search navigation-policy tests",
+        "10 strict external-URL tests",
+        "20 browsing-data selection/result/failure-model tests"
+      ]
+    },
+    "native": {
+      "tests": 15,
+      "failures": 0,
+      "seconds": 39.313,
+      "environment": "Owned disposable Android17/API37 emulator, not a physical handset",
+      "groups": [
+        {
+          "class": "BrowserIntegrationTest",
+          "count": 5,
+          "scope": "Read-only APK, intent registration/gates, packaged palette and asset checks"
+        },
+        {
+          "class": "BrowserRecreationTest",
+          "count": 1,
+          "scope": "Real engine session/page/history retention and terminal close using a fixed local document"
+        },
+        {
+          "class": "BrowsingDataNativeTest",
+          "count": 5,
+          "scope": "Three actual selective engine-persistence cases plus two real-fixture validation/boundary/busy-guard cases"
+        },
+        {
+          "class": "BrowsingDataUiTest",
+          "count": 3,
+          "scope": "Visible validation, cancellation/keep-data consent and confirmed history-only reset"
+        },
+        {
+          "class": "BrowsingDataLifecycleTest",
+          "count": 1,
+          "scope": "Explicitly simulated pending ENGINE_CLEAR failure through two mid-pending Activity recreations; not an actual engine cleanup failure"
+        }
+      ],
+      "selective_engine_findings": [
+        "History-only closes the session while preserving the fixture cookie, localStorage and HTTP cache",
+        "Cache selection causes the fixture cached asset to be fetched again while preserving its cookie/localStorage",
+        "Cookie/DOM-storage selection removes the fixture cookie/localStorage while preserving its HTTP cache",
+        "Invalid selection and a throwing close boundary do not issue a storage request or retry",
+        "A second controller for the same runtime is rejected while the first operation is busy, before another close boundary runs"
+      ],
+      "simulated_lifecycle_findings": [
+        "No live or attached page session opens during either pending recreation",
+        "Browsing controls remain disabled and waiting UI is visible",
+        "The injected typed failure reaches the active UI as not confirmed, never as completed",
+        "Fresh local Home/session recovery occurs only after the injected terminal event"
+      ],
+      "simulated_lifecycle_limit": "This covers rotation while pending, not persistence of an already-shown terminal error dialog through a later rotation.",
+      "prior_pre_large_text_fix_seconds": 37.04,
+      "published_log": "docs/reports/native-privacy-2026-10-31.log"
+    },
+    "visual_review": {
+      "screenshot_dimensions": "1080x2400, unedited native captures",
+      "full_talkback_or_contrast_audit": false,
+      "fixed_issue": "The initial long confirmation label stacked/clipped Keep data at200%; shortened to Clear data and manually retested",
+      "clear_confirmation": "Actual all-category clear completed in the owned synthetic profile; completed status captured",
+      "light_and_dark": "Native choice panels visually inspected in both modes; original blue/ink brand tokens and native controls preserved",
+      "large_text": "200%: scrolled to site category, selected it, reviewed and cancelled. Both final confirmation actions fully visible,142px high"
+    },
+    "screenshots": [
+      "docs/screenshots/privacy/browsing-data-completed-dark.png",
+      "docs/screenshots/privacy/browsing-data-confirmation-dark.png",
+      "docs/screenshots/privacy/browsing-data-dark.png",
+      "docs/screenshots/privacy/browsing-data-large-text-confirmation.png",
+      "docs/screenshots/privacy/browsing-data-large-text-selected.png",
+      "docs/screenshots/privacy/browsing-data-large-text.png",
+      "docs/screenshots/privacy/browsing-data-light.png"
+    ]
+  },
+  "commands_from_android_directory": {
+    "build_and_checks": "./scripts/build.ps1",
+    "native_runner_on_owned_emulator": "adb -P 15037 -s emulator-5558 shell am instrument -w com.kixkan.browser.prototype.test/androidx.test.runner.AndroidJUnitRunner"
+  },
+  "source_scope": {
+    "canonical_repository": "https://github.com/Kix-Kan/Browser",
+    "android_sources_and_ANDROID_version_fields_only": true,
+    "desktop_website_and_other_preexisting_dirty_work_included": false,
+    "account_bookmark_production_logic_changed_for_this_milestone": false,
+    "wsl_started_or_changed": false
+  },
+  "publication": {
+    "repository_visibility": "public",
+    "planned_branch": "prototype/android-privacy-03",
+    "status": "pending_lead_publication",
+    "source_commit": "c4aeb82f86ed61e90ccadb7e145a4e745e6694da",
+    "apk_upload_or_release_performed": false,
+    "source_commit_scope": "Last application-code commit; later commits contain evidence only"
+  },
+  "known_limitations": [
+    "No independently verified all-item erasure or secure-erasure guarantee; the pinned engine masks individual cleaner failure bits",
+    "Only all-time requests are implemented; no date-range filtering",
+    "Storage clearing requires explicit current-tab/history closure; preserving open-page/session state during storage clearing is unsupported",
+    "Process-death recovery of a pending operation is not implemented; the pending UI/controller state is process-lifetime only",
+    "Physical handsets, hardware/carrier behavior and complete accessibility/TalkBack acceptance remain untested",
+    "No real production account login, credentials or server-side account behavior was exercised",
+    "Developer debug package only, with no production signing, secure update delivery or public APK release",
+    "Existing prototype browser limitations outside this privacy milestone remain; this is not a security certification"
+  ],
+  "next_priority": "Physical handset and TalkBack testing, process-death privacy behavior, and smaller production-signed packages; no release readiness claim"
+}
