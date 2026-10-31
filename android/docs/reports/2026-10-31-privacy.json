@@ -199,10 +199,22 @@
   "publication": {
     "repository_visibility": "public",
     "planned_branch": "prototype/android-privacy-03",
-    "status": "pending_lead_publication",
+    "status": "source_review_branch_pushed_and_remote_commit_verified",
     "source_commit": "c4aeb82f86ed61e90ccadb7e145a4e745e6694da",
     "apk_upload_or_release_performed": false,
-    "source_commit_scope": "Last application-code commit; later commits contain evidence only"
+    "source_commit_scope": "Last application-code commit; later commits contain evidence only",
+    "verified_publication_snapshot": "8c6559ca014b7ceda8a23fd73e40a690f1ca46fc",
+    "branch_url": "https://github.com/Kix-Kan/Browser/tree/prototype/android-privacy-03/android",
+    "master_merged": false,
+    "receipt_note": "The verified snapshot identifies the first source/evidence push. A later evidence-only commit records this receipt.",
+    "remote_ci": {
+      "android_native_checks": "Passed locally as separately recorded; remote Android build not claimed",
+      "scope": "Existing desktop overlay validation, not an Android build/native test",
+      "observed": "Eight existing overlay unit tests passed; ShellCheck failed on pre-existing readonly-assignment warnings and attempted to parse systemd/desktop metadata as shell",
+      "changed_desktop_validator_to_hide_failure": false,
+      "conclusion": "failure",
+      "url": "https://github.com/Kix-Kan/Browser/actions/runs/41169913915"
+    }
   },
   "known_limitations": [
     "No independently verified all-item erasure or secure-erasure guarantee; the pinned engine masks individual cleaner failure bits",
